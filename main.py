@@ -12,7 +12,7 @@ from connections import manager
 
 
 # FOR LOCAL TESTING ONLY
-# Update websockets url to wss://<app-name>.azurewebsites.net:8000/ws
+# Update websockets url to wss://<app-name>.azurewebsites.net/ws
 html = """
 <h1>Real Time Messaging</h1>
 <pre id="messages" style="height: 400px; overflow: scroll"></pre>
@@ -39,7 +39,7 @@ html = """
         ws.close();
       }
 
-      ws = new WebSocket('ws://localhost:8000/ws');
+      ws = new WebSocket('wss://fastapi-websockets-sample.azurewebsites.net/ws');
       ws.onopen = () => {
         console.log('Connection opened!');
       }
